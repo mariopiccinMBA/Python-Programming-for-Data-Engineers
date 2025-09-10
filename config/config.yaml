@@ -1,0 +1,32 @@
+# Configuração do Pipeline de Cotações Cambiais
+
+api:
+  base_url: "https://v6.exchangerate-api.com/v6"
+  timeout: 30
+  
+currencies:
+  base: "USD"
+  targets: ["BRL", "EUR", "GBP", "JPY", "CAD", "AUD", "CHF", "CNY", "MXN", "ARS"]
+
+data_paths:
+  raw: "data/raw"
+  silver: "data/silver"
+  gold: "data/gold"
+  logs: "logs"
+
+llm:
+  model: "gpt-3.5-turbo"
+  max_tokens: 1000
+  temperature: 0.3
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+database:
+  enabled: false
+  host: "localhost"
+  port: 5432
+  database: "currency_exchange"
+  user: "postgres"
+  password: ""
